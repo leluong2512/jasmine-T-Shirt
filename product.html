@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jasmine</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section class="header fadeIn">
+    <div class="header-logo">
+        <a href="index.html">jasmine</a>
+    </div>
+    <div class="header-nav">
+      <ul class="nav-list">
+          <li class="nav-item"><a href="index.html"><span>Home</span><span>ホーム</span></a></li>
+          <li class="nav-item has-child"><a href="#"><span>Shop</span><span>ショップ</span></a>
+              <ul class="subnav-list">
+                  <li class="subnav-item"><a href="men_page.html"><span>Men</span><span>メンズ</span></a></li>
+                  <li class="subnav-item"><a href="women_index.html"><span>Women</span><span>ウイメンズ</span></a></li>
+              </ul>
+          </li>
+          <li class="nav-item"><a href="#"><span>About</span><span>私たちについて</span></a></li>
+          <li class="nav-item"><a href="#"><span>Blog</span><span>ブログ</span></a></li>
+          <li class="nav-item"><a href="#"><span>Contact</span><span>お問い合わせ</span></a></li>
+      </ul>
+  </div>
+<div class="header-search">
+        <a class="joinus" href="../cart.html">
+            SHOPPING BAG <span class="cart-count"></span>
+          </a>
+         <input type="text" class="search" placeholder="search">
+         <div class="search-history hidden"></div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+</section>
+<section class="product-content">
+  <article class="product-img">
+    <img id="detail-img" src="" alt="">
+  </article>
+  <article class="product-info">
+    <h3 id="detail-name"></h3>
+    <p id="price"></p>
+    <article class="size-color-selector">
+      <div class="selector-group">
+        <h4>SIZE</h4>
+        <div class="size-selector">
+          <span class="size-opt" data-size="S">S</span>
+          <span class="size-opt" data-size="M">M</span>
+          <span class="size-opt" data-size="L">L</span>
+          <span class="size-opt" data-size="XL">XL</span>
+          <span class="size-opt" data-size="XXL">XXL</span>
+        </div>
+      </div>
+      <div class="selector-group">
+        <h4>COLOR</h4>
+        <ul class="color-selector">
+          <li class="color-opt" data-color="BLACK" style="background-color: black;"></li>
+          <li class="color-opt" data-color="WHITE" style="background-color:white ;"></li>
+          <li class="color-opt" data-color="BLUE NAVI" style="background-color:rgb(27, 27, 82) ;"></li>
+          <li class="color-opt" data-color="GREEN" style="background-color:green ;"></li>
+          <li class="color-opt" data-color="OYSTER" style="background-color:rgb(234, 204, 128);"></li>
+          <li class="color-opt" data-color="GREY" style="background-color:grey ;"></li>
+
+        </ul>
+      </div>
+      <p class="choose-size-color">Size : <span id="selected-size">-</span> | Color : <span id="selected-color">-</span></p>
+      <button class="btn-add">ADD</button>
+      <!-- <p class="description">Slim fit T-shirt. Round neck and short sleeve.</p>
+      <ul class="more-info">
+        <li>PRODUCT MEASUREMENTS</li>
+        <li>COMPOSITION, CARE & ORIGIN</li>
+        <li>CHECK IN-STORE AVAILABILITY</li>
+        <li>SHIPPING, EXCHANGES AND RETURNS</li>
+      </ul> -->
+    </article>
+
+  </article>
+</section>
+
+    <section class="footer delayScroll">
+      <div class="footer_logo-navmain ">
+          <div class="footer_logo"><a href="index.html">jasmine</a></div>
+          <ul class="footer_nav-list">
+              <li><a href="#">shop</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="#">contact</a></li>
+          </ul>
+      </div>
+      <div class="footer_subnav">
+          <ul class="footer_shop">
+              <li class="footer_subnav-heading">Shop</li>
+              <li><a href="men_page.html">Men</a></li>
+              <li> <a href="women_index.html">Women</a></li>
+          </ul>
+          <ul class="footer_company">
+              <li class="footer_subnav-heading">Company</li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Recruit</a></li>
+          </ul>
+          <ul class="footer_help">
+              <li class="footer_subnav-heading">Help</li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              
+          </ul>
+          <ul class="footer_social">
+              <li class="footer_subnav-heading">Social</li>
+              <div class="footer_social-list">
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+              </div>
+          </ul>
+      </div>
+      <div class="footer_copyright"><p>© 2024 jasmine. All rights reserved.</p></div>
+  </section>
+
+
+
+  <!-- jQuery for product detail -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/product.js"></script>
+<script src="js/main.js"></script>

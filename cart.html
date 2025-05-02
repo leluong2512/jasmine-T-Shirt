@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jasmine</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main">
+        <div class="header fadeIn">
+            <div class="header-logo">
+                <a href="index.html">jasmine</a>
+            </div>
+            <div class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html"><span>Home</span><span>ホーム</span></a></li>
+                    <li class="nav-item has-child"><a href="#"><span>Shop</span><span>ショップ</span></a>
+                        <ul class="subnav-list">
+                            <li class="subnav-item"><a href="men_page.html"><span>Men</span><span>メンズ</span></a></li>
+                            <li class="subnav-item"><a href="women_index.html"><span>Women</span><span>ウイメンズ</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href=""><span>About</span><span>私たちについて</span></a></li>
+                    <li class="nav-item"><a href=""><span>Blog</span><span>ブログ</span></a></li>
+                    <li class="nav-item"><a href=""><span>Contact</span><span>お問い合わせ</span></a></li>
+                </ul>
+            </div>
+            <div class="header-search">
+                <a href="#" class="joinus"><p>SHOPPING BAG</p> </a>
+                <input type="text" class="search" placeholder="search">
+                <div class="search-history hidden"></div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="cart-container">
+            <h3 class="cart-container_header">SHOPPING BAG</h3>
+            <div id="cart-content" class="cart-grid">
+            </div>
+          </div>
+          <div id="cart-summary" class="hidden">
+            <p id="total-price">TOTAL: <i class="fa-solid fa-yen-sign"></i>0</p>
+            <div class="button-list">
+                <button id="continue-shopping">BACK</button>
+                <button id="checkout-btn">COUTINUE</button>
+            </div>
+          </div>
+        
+        
+        <div class="footer delayScroll">
+            <div class="footer_logo-navmain ">
+                <div class="footer_logo"><a href="index.html">jasmine</a></div>
+                <ul class="footer_nav-list">
+                    <li><a href="#">shop</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </div>
+            <div class="footer_subnav">
+                <ul class="footer_shop">
+                    <li class="footer_subnav-heading">Shop</li>
+                    <li><a href="men_page.html">Men</a></li>
+                    <li> <a href="women_index.html">Women</a></li>
+                </ul>
+                <ul class="footer_company">
+                    <li class="footer_subnav-heading">Company</li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Recruit</a></li>
+                </ul>
+                <ul class="footer_help">
+                    <li class="footer_subnav-heading">Help</li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    
+                </ul>
+                <ul class="footer_social">
+                    <li class="footer_subnav-heading">Social</li>
+                    <div class="footer_social-list">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </ul>
+            </div>
+            <div class="footer_copyright"><p>© 2024 jasmine. All rights reserved.</p></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+     <script src="./js/cart.js"></script>
+    <script></script>
+
+</body>
+</html>

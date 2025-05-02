@@ -1,0 +1,61 @@
+:root{
+    --primary-color:#eee4e4;
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#3c3c3c;
+    --main-color:#51644D;
+}
+
+.fadeIn{
+    animation: fadeIn 600ms 0s ease ;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fadeUp {
+    animation-name:fadeUpAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+    }
+    
+    @keyframes fadeUpAnime{
+      from {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+.fadeRight {
+        animation-name:fadeRightAnime;
+        animation-duration:0.5s;
+        animation-fill-mode:forwards;
+        opacity: 0;
+        }
+        
+        @keyframes fadeRightAnime{
+          from {
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+        
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+    

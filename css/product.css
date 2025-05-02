@@ -1,0 +1,92 @@
+ .product-content{
+    width: 90%;
+    margin: 100px 100px;
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #detail-img{
+    width: 100%;
+  }
+
+  #detail-name{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 30%;
+  }
+
+  .product-info #price{
+    font-size: 2rem;
+    padding: 10px 0;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .product-info #price i{
+    padding-right: 2px;
+  }
+
+  .product-info #price::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top:120%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--black-color);
+  }
+
+  .size-color-selector{
+    margin-top: 25px;
+  }
+  
+  .selector-group h4{
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding-bottom:15px ;
+  }
+
+  .size-selector{
+    padding-bottom: 10px;
+    font-size: 1.6rem;
+  }
+
+  .size-selector span{
+    padding-right: 10px;
+    cursor: pointer;
+  }
+
+  .color-selector{
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .color-selector .color-opt{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 0.5px solid var(--black-color);
+    cursor: pointer;
+    
+  }
+
+  .choose-size-color{
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+  }
+
+  .btn-add{
+    width: 100%;
+    height: 40px;
+    background: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+  }
+
+  .ans{
+    color: #bababa;
+  }
