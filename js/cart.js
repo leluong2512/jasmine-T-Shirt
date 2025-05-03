@@ -30,10 +30,8 @@ $(function() {
     }
 
     cart.forEach((item, idx) => {
-      // Chuẩn hoá src: loại bỏ mọi '../'
       const rawSrc = item.image || '';
       const imgSrc = rawSrc.replace(/^(\.\.\/)+/, '');
-      // Đảm bảo price là number
       const priceValue = typeof item.price === 'number' ? item.price : 0;
       const priceFormatted = priceValue.toLocaleString();
 
@@ -67,7 +65,6 @@ $(function() {
     );
   }
 
-  // Tăng/giảm & xóa
   $('#cart-content').on('click', '.increase, .decrease', function() {
     const idx = +$(this).closest('.cart-item').data('index');
     const cart = getCart();
@@ -92,8 +89,6 @@ $(function() {
       window.location.href = 'men_page.html';
     }
   });
-
-  // Khởi tạo
   renderCart();
   updateCartCount();
 });
