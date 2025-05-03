@@ -1,3 +1,13 @@
+
+$(".open-btn").click(function () {
+    $("#search-wrap").addClass('panelactive');//#search-wrapへpanelactiveクラスを付与
+	$('#search-text').focus();//テキスト入力のinputにフォーカス
+});
+
+$(".close-btn").click(function () {
+    $("#search-wrap").removeClass('panelactive');//#search-wrapからpanelactiveクラスを除去
+});
+
 function delayScrollAnime() {
 	var time = 0.2;
 	var value = time;

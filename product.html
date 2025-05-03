@@ -33,14 +33,25 @@
           <li class="nav-item"><a href="#"><span>Contact</span><span>お問い合わせ</span></a></li>
       </ul>
   </div>
-<div class="header-search">
-        <a class="joinus" href="cart.html">
-            SHOPPING BAG <span class="cart-count"></span>
-          </a>
-         <input type="text" class="search" placeholder="search">
-         <div class="search-history hidden"></div>
-        <i class="fa-solid fa-magnifying-glass"></i>
+  <article class="cart-user">
+    <div class="cart-text">
+        <a href="cart.html" class="joinus"><p>SHOPPING BAG</p> </a>
     </div>
+    <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+</article>
+
+
+    <div class="open-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <div id="search-wrap">
+    <div class="close-btn"><span></span><span></span></div>           
+    <div class="search-area">
+        <form role="search" method="get" action="">
+            <input type="text" value="" name="" id="search-text" placeholder="search">
+            <input type="submit" id="searchsubmit" value="">
+        </form>
+                       
+    </div>
+</div>
 </section>
 <section class="product-content">
   <article class="product-img">
@@ -74,14 +85,6 @@
       </div>
       <p class="choose-size-color">Size : <span id="selected-size">-</span> | Color : <span id="selected-color">-</span></p>
       <button class="btn-add">ADD</button>
-      <!-- <p class="description">Slim fit T-shirt. Round neck and short sleeve.</p>
-      <ul class="more-info">
-        <li>PRODUCT MEASUREMENTS</li>
-        <li>COMPOSITION, CARE & ORIGIN</li>
-        <li>CHECK IN-STORE AVAILABILITY</li>
-        <li>SHIPPING, EXCHANGES AND RETURNS</li>
-      </ul> -->
-    </article>
 
   </article>
 </section>

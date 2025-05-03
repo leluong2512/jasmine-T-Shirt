@@ -97,14 +97,19 @@ html{
     margin-top: 15px;
 }
 
-.header-search{
+.cart-user{
+    width: fit-content;
+    height: 100%;
     display: flex;
-    justify-content:flex-end;
-    margin-right: 50px;
-    
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+}
+.cart-text{
+    margin-right: 10px;
 }
 
-.header-search .joinus{
+.joinus{
     width: 130px;
     height: 25px;
     color: var(--text-color);
@@ -114,64 +119,143 @@ html{
     font-size: 1.2rem;
 }
 
-.header-search .search{
-    width: 150px;
-    height: 23px;
-    border: 1px solid #c4c4c4;
-    margin-left: 20px;
-    border-radius: 5px;
-    color: #c4c4c4;
-    position: relative;
-    padding: 0 0 0 5px;
 
-}
-
-.header-search i{
-    font-size: 1.2rem;
-    margin: 0 5px;
-    position: absolute;
-    top: 45px;
-    right: 55px;
-
-}
-.search-history {
-    position: absolute;
-    top: 100%;            /* tùy chỉnh cho khớp với input */
-    right: 0;
-    width: 150px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    z-index: 1001;
-    max-height: 200px;
-    overflow-y: auto;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-  .search-history.hidden {
-    display: none;
-  }
-  .search-history .history-item {
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 1.4rem;
-    color: #333;
-  }
-  .search-history .history-item:hover {
-    background: #f0f0f0;
-  }
-  .search-history .history-clear {
-    padding: 8px 12px;
-    font-size: 1.2rem;
+.user-icon{
+    font-size: 1.5rem;
     color: #888;
-    text-align: center;
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    border-top: 1px solid #eee;
-  }
-  .search-history .history-clear:hover {
-    background: #f9f9f9;
-  }
-  
-  
+}
+
+.user-icon:hover,
+.joinus:hover{
+    color: #000;
+}
+
+/* search------------- */
+.open-btn{
+	position: absolute;
+	top:0;
+	right:10px;
+    color: #888;
+    font-size: 1.5rem;
+	width:40px;
+	height:100%;
+	border-radius: 50%;
+    line-height: 100px;
+	cursor: pointer;
+}
+
+.open-btn:hover{
+    color: #000;
+}
+
+
+#search-wrap{
+    position:fixed;
+	top: 0;
+    left: 0;
+	z-index: -1;
+	opacity: 0;
+	transition: all 0.4s;
+	width:100%;
+	height: 100vh;
+}
+
+#search-wrap.panelactive{
+	opacity: 1;
+	 z-index: 3;
+	 background:#fff;
+	 display: flex;
+	 justify-content: center;
+
+}
+
+/*==検索窓のエリア*/
+
+#search-wrap .search-area{
+	display: none;/
+}
+
+#search-wrap.panelactive .search-area{
+	display: block;
+	width:80%;
+	position: relative;
+}
+
+
+#search-wrap form{
+	position: relative;
+	height: 66px;
+}
+
+#search-wrap input{
+	-webkit-appearance:none;
+	outline: none;
+	cursor: pointer;
+	color: #666;
+}
+
+ #search-wrap input[type="text"] {
+	width: 100%;
+	padding: 20px;
+	border: none;
+	transition: all 0.5s;
+	letter-spacing: 0.05em;
+    margin-top: 100px;
+}
+
+ #search-wrap input[type="text"]:focus {
+    border-bottom:0.5px solid #666;
+}
+
+ #search-wrap input[type="submit"] {
+	position: absolute;
+	 top:100px;
+	right:-45px;
+	background:url("../img/icon_search.svg") no-repeat 15px center;/*虫眼鏡アイコンを背景に表示*/
+	background-size: 1.5rem 1.5rem;
+	width: 60px;
+	height: 60px;
+    border: none;
+}
+
+.close-btn{
+	position: absolute;
+	top:20px;
+	right:10px;
+	z-index: 2;
+	cursor: pointer;
+    width: 60px;
+    height:60px;
+}
+	
+.close-btn span{
+    display: inline-block;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #999;
+ }
+
+.close-btn span:nth-of-type(1) {
+    top: 21px;
+    left: 16px;
+    transform: translateY(6px) rotate(-135deg);
+    width: 50%;
+}
+
+.close-btn span:nth-of-type(2){
+    top: 32px;
+    left: 16px;
+    transform: translateY(-6px) rotate(135deg);
+    width: 50%;
+}
+
 
 
 /* top-content------------------------------------ */
@@ -255,7 +339,6 @@ html{
 
 .type-content{
     width: 80%;
-    min-width: 800px;
     margin: 0 auto;
 }
 
@@ -281,22 +364,6 @@ html{
 .type-content_item_box{
     margin: 20px 20px;
 }
-
-/* .type-content_item_img1{
-    background: url(../img/mediamodifier-3px99yvii9s-unsplash.jpg) no-repeat center center / cover;
-
-}
-
-.type-content_item_img2{
-    background: url(../img/don-delfin-almonte-JqcoiHlT7XE-unsplash.jpg) no-repeat center center / cover;
-
-}
-
-.type-content_item_img3{
-
-    background: url(../img/tamara-harhai-VHeQRb0AXhg-unsplash.jpg) no-repeat center bottom / cover;
-} */
-
 
 
 
@@ -344,7 +411,6 @@ html{
 
 .concept-img{
     width:50%;
-    min-width: 500px;
     height:500px;
     background: url(../img/sarah-dorweiler-fr0J5-GIVyg-unsplash.jpg) no-repeat center center/cover;
     border-radius: 10px;
@@ -353,7 +419,6 @@ html{
 
 .concept-content{
     width: 50%;
-    min-width: 400px;
 }
 
 .concept-content h2{
@@ -372,7 +437,7 @@ html{
 }
 
 .why-choose_heading{
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
 }
 

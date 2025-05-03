@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,12 +34,23 @@
                     <li class="nav-item"><a href="#"><span>Contact</span><span>お問い合わせ</span></a></li>
                 </ul>
             </div>
-            <div class="header-search">
-                <a href="cart.html" class="joinus"><p>SHOPPING BAG</p> </a>
-                <input type="text" class="search" placeholder="search">
-                <div class="search-history hidden"></div>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                   
+            <article class="cart-user">
+                <div class="cart-text">
+                    <a href="cart.html" class="joinus"><p>SHOPPING BAG</p> </a>
+                </div>
+                <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+            </article>
+    
+            
+                <div class="open-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div id="search-wrap">
+                <div class="close-btn"><span></span><span></span></div>           
+                <div class="search-area">
+                    <form role="search" method="get" action="">
+                        <input type="text" value="" name="" id="search-text" placeholder="search">
+                        <input type="submit" id="searchsubmit" value="">
+                    </form>
+                                   
                 </div>
             </div>
         </div>
