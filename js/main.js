@@ -1,11 +1,11 @@
 
 $(".open-btn").click(function () {
-    $("#search-wrap").addClass('panelactive');//#search-wrapへpanelactiveクラスを付与
-	$('#search-text').focus();//テキスト入力のinputにフォーカス
+    $("#search-wrap").addClass('panelactive');
+	$('#search-text').focus();
 });
 
 $(".close-btn").click(function () {
-    $("#search-wrap").removeClass('panelactive');//#search-wrapからpanelactiveクラスを除去
+    $("#search-wrap").removeClass('panelactive');
 });
 
 function delayScrollAnime() {
@@ -107,7 +107,6 @@ $(function() {
 	  $count.text(total);
 	}
   
-	// Mở overlay chọn size
 	$('.add-icon').on('click', function(e) {
 	  e.preventDefault();
 	  e.stopPropagation();
@@ -130,53 +129,45 @@ $(function() {
 	  $imgCont.append(overlay);
 	});
   
-	// Click ngoài overlay đóng overlay
 	$(document).on('click', function(e) {
 	  if (!$(e.target).closest('.size-overlay').length) {
 		$('.size-overlay').remove();
 	  }
 	});
   
-	// Mở popup tư vấn size
 	$(document).on('click', '.size-advisor', function(e) {
 	  e.stopPropagation();
 	  $('#size-popup').removeClass('hidden');
 	});
   
-	// Đóng popup tư vấn size
 	$('#size-popup .close-popup').on('click', function(e) {
 	  e.stopPropagation();
 	  $('#size-popup').addClass('hidden');
 	});
   
-	// Chọn size và thêm vào giỏ
 	$(document).on('click', '.size-option', function(e) {
 	  e.stopPropagation();
   
 	  const size = $(this).text().trim();
 	  const $card = $(this).closest('.men-section_list, .women-section_list');
   
-	  // Ảnh sản phẩm
 	  const image = $card.find('img').attr('src') || '';
   
-	  // Tên sản phẩm (Men hoặc Women)
 	  const name = (
 		$card.find('.product_name h3').text().trim() ||
 		''
 	  );
   
-	  // Lấy text chứa số để xác định giá
 	  let priceText = '';
 	  $card.find('p').each(function() {
 		const txt = $(this).text().trim();
 		if (/\d/.test(txt)) {
 		  priceText = txt;
-		  return false; // break
+		  return false; 
 		}
 	  });
 	  const price = parseInt(priceText.replace(/[^\d]/g, ''), 10) || 0;
   
-	  // Lấy giỏ hàng, thêm hoặc tăng số lượng
 	  const cart = getCart();
 	  const idx = cart.findIndex(i => i.name === name && i.size === size);
 	  if (idx > -1) {
@@ -191,11 +182,9 @@ $(function() {
 		.animate({ fontSize: '1.2rem' }, 100);
   
   
-	  // Đóng overlay
 	  $card.find('.size-overlay').remove();
 	});
 	$('.men-section_list, .women-section_list').off('click').on('click', function(e) {
-		// Bỏ qua nếu click vào overlay chọn size hoặc dấu cộng
 		if ($(e.target).closest('.add-icon, .size-overlay, .size-option, .size-advisor').length) return;
 		e.preventDefault();
 	  
@@ -246,92 +235,3 @@ $(function() {
 })
 })
 
-// $(function(){
-// 	// === LIVE FILTER & REDIRECT ===
-// 	function filterShop(q) {
-// 	  const query = q.toLowerCase();
-// 	  $('.men-section_list, .women-section_list').each(function(){
-// 		const name = $(this).find('.product_name h3').text().toLowerCase();
-// 		$(this).toggle(name.includes(query));
-// 	  });
-// 	}
-// 	function filterCart(q) {
-// 	  const query = q.toLowerCase();
-// 	  $('#cart-content .cart-item').each(function(){
-// 		const name = $(this).find('h3').text().toLowerCase();
-// 		$(this).toggle(name.includes(query));
-// 	  });
-// 	}
-// 	// Khởi filter nếu có ?search=…
-// 	const params = new URLSearchParams(window.location.search);
-// 	const initSearch = params.get('search') || '';
-// 	if (initSearch) {
-// 	  $('.search').val(initSearch);
-// 	  if (/men_page|women_index/.test(location.pathname)) {
-// 		filterShop(initSearch);
-// 	  } else if (location.pathname.endsWith('cart.html')) {
-// 		filterCart(initSearch);
-// 	  }
-// 	}
-// 	// Handle Enter hoặc click icon
-// 	$('.search').on('keyup', function(e){
-// 	  if (e.key === 'Enter') $('.fa-magnifying-glass').trigger('click');
-// 	});
-// 	$('.fa-magnifying-glass').on('click', function(){
-// 	  const q = $('.search').val().trim();
-// 	  if (!q) return;
-// 	  // trên shop/cart thì filter live
-// 	  if (/men_page|women_index/.test(location.pathname)) {
-// 		filterShop(q);
-// 	  } else if (location.pathname.endsWith('cart.html')) {
-// 		filterCart(q);
-// 	  } else {
-// 		// trên index/product: redirect kèm param
-// 		location.href = `men_page.html?search=${encodeURIComponent(q)}`;
-// 	  }
-// 	  // thêm vào history
-// 	  addHistory(q);
-// 	  renderHistory();
-// 	});
-  
-// 	// === SEARCH HISTORY ===
-// 	const HISTORY_KEY = 'jasmineSearchHistory', MAX_HISTORY = 5;
-// 	function getHistory() {
-// 	  return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
-// 	}
-// 	function saveHistory(arr) {
-// 	  localStorage.setItem(HISTORY_KEY, JSON.stringify(arr.slice(0, MAX_HISTORY)));
-// 	}
-// 	function addHistory(term) {
-// 	  if (!term) return;
-// 	  let hist = getHistory().filter(t => t !== term);
-// 	  hist.unshift(term);
-// 	  saveHistory(hist);
-// 	}
-// 	function renderHistory() {
-// 	  const $box = $('.search-history').empty();
-// 	  const hist = getHistory();
-// 	  if (!hist.length) return $box.addClass('hidden');
-// 	  hist.forEach(t => $box.append(`<div class="history-item">${t}</div>`));
-// 	  $box.append(`<div class="history-clear">Clear history</div>`)
-// 		  .removeClass('hidden');
-// 	}
-// 	// sự kiện
-// 	$('.search').on('focus', renderHistory);
-// 	$(document).on('click', e => {
-// 	  if (!$(e.target).closest('.search, .search-history').length) {
-// 		$('.search-history').addClass('hidden');
-// 	  }
-// 	});
-// 	$('.search-history')
-// 	  .on('click', '.history-item', function(){
-// 		const q = $(this).text();
-// 		$('.search').val(q);
-// 		$('.fa-magnifying-glass').trigger('click');
-// 	  })
-// 	  .on('click', '.history-clear', function(){
-// 		localStorage.removeItem(HISTORY_KEY);
-// 		$('.search-history').addClass('hidden');
-// 	  });
-//   });
-  
