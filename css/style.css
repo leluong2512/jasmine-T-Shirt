@@ -193,6 +193,7 @@ html{
 }
 
 #search-wrap input{
+	-webkit-appearance:none;
 	outline: none;
 	cursor: pointer;
 	color: #666;
