@@ -1,13 +1,37 @@
 
-$(".open-btn").click(function () {
-    $("#search-wrap").addClass('panelactive');
+$('.open-btn').click(function () {
+    $('#search-wrap').addClass('panelactive');
 	$('#search-text').focus();
+	$('.menu-bar-mobile').css('display',('none'))
 });
 
-$(".close-btn").click(function () {
-    $("#search-wrap").removeClass('panelactive');
-});
+$('.close-btn').click(function () {
+    $('#search-wrap').removeClass('panelactive');
+	$('.menu-bar-mobile').css('display',('block'))
 
+});
+$(function () {
+	function handleMobileJS() {
+	  if ($(window).width() <= 960) {
+		$('.openbtn').click(function () {//ボタンがクリックされたら
+			$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+			$('#g-nav').toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+		});
+		
+		$('#g-nav a').click(function () {//ナビゲーションのリンクがクリックされたら
+			$('.openbtn').removeClass('active');//ボタンの activeクラスを除去し
+			$('#g-nav').removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+		});
+		$('.header-nav').css('display',('none'))
+		}else{
+			$('.header-nav').css('display',('flex'));
+			$('.menu-bar-mobile').css('display',('none'))
+		}	  
+	}
+  
+	handleMobileJS(); // Gọi ngay khi load
+	$(window).resize(handleMobileJS); // Gọi khi resize
+  });
 function delayScrollAnime() {
 	var time = 0.2;
 	var value = time;
