@@ -13,14 +13,14 @@ $('.close-btn').click(function () {
 $(function () {
 	function handleMobileJS() {
 	  if ($(window).width() <= 960) {
-		$('.openbtn').click(function () {//ボタンがクリックされたら
-			$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-			$('#g-nav').toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+		$('.openbtn').click(function () {
+			$(this).toggleClass('active');
+			$('#g-nav').toggleClass('panelactive');
 		});
 		
-		$('#g-nav a').click(function () {//ナビゲーションのリンクがクリックされたら
-			$('.openbtn').removeClass('active');//ボタンの activeクラスを除去し
-			$('#g-nav').removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+		$('#g-nav a').click(function () {
+			$('.openbtn').removeClass('active');
+			$('#g-nav').removeClass('panelactive');
 		});
 		$('.header-nav').css('display',('none'))
 		}else{
@@ -29,8 +29,8 @@ $(function () {
 		}	  
 	}
   
-	handleMobileJS(); // Gọi ngay khi load
-	$(window).resize(handleMobileJS); // Gọi khi resize
+	handleMobileJS(); 
+	$(window).resize(handleMobileJS); git 
   });
 function delayScrollAnime() {
 	var time = 0.2;
@@ -235,10 +235,10 @@ $(function() {
 	 $(function(){
 		const path = window.location.pathname.toLowerCase();
 	  
-		if (path.includes('men_page.html') || path.endsWith('/men_page.html')) {
+		if (path.includes('men_page.html') || path.endsWith('men_page.html')) {
 		  localStorage.setItem('lastCategory', 'men');
 		} 
-		else if (path.includes('women_index.html') || path.endsWith('/women_index.html')) {
+		else if (path.includes('women_index.html') || path.endsWith('women_index.html')) {
 		  localStorage.setItem('lastCategory', 'women');
 		}
 	  });

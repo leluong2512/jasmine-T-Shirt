@@ -16,13 +16,17 @@ $(function () {
       });
     });
 
-  // 1. Lấy dữ liệu sản phẩm từ localStorage
-  const raw = localStorage.getItem('jasmineProduct');
-  if (!raw) {
-    console.error('No product data found. Redirecting...');
-    window.location.href = 'men_page.html';
-    return;
-  }
+    const raw = localStorage.getItem('jasmineProduct');
+    if (!raw) {
+      if (!sessionStorage.getItem('hasRedirected')) {
+        sessionStorage.setItem('hasRedirected', 'true');
+        window.location.href = 'men_page.html';
+      } else {
+        console.warn('Đã redirect một lần, dừng tại đây để tránh vòng lặp.');
+        $('body').html('<p style="text-align:center;margin-top:100px;">Không có dữ liệu sản phẩm để hiển thị.</p>');
+      }
+      return;
+    }
   const product = JSON.parse(raw);
   const { name, price, colorImages } = product;
 
@@ -33,14 +37,12 @@ $(function () {
   let selectedColor = firstColor;
   let selectedSize = '';
 
-  // 2. Gán dữ liệu ban đầu
   $('#detail-img').attr('src', colorImages[firstColor]);
   $('#detail-name').html(`${name} <span>(${firstColor})</span>`);
   $('#price').html(`<i class="fa-solid fa-yen-sign"></i>${price.toLocaleString()}`);
   $('#selected-color').text(firstColor);
   $('#selected-size').text('-');
 
-  // 3. Hiển thị và lọc các màu hợp lệ
   $('.color-opt').each(function () {
     const $opt = $(this);
     const color = $opt.data('color');
@@ -55,7 +57,6 @@ $(function () {
 
   $('.color-opt').first().addClass('active');
 
-  // 4. Click chọn màu
   $(document).on('click', '.color-opt', function () {
     const $this = $(this);
     const color = $this.data('color');
@@ -68,7 +69,6 @@ $(function () {
     $this.addClass('active');
   });
 
-  // 5. Chọn size
   $('.size-opt').on('click', function () {
     selectedSize = $(this).data('size');
     $('#selected-size').text(selectedSize);
@@ -76,10 +76,9 @@ $(function () {
     $(this).addClass('active');
   });
 
-  // 6. Thêm vào giỏ hàng
   $('.btn-add').on('click', function () {
-    if (!selectedSize) return alert('Vui lòng chọn size');
-    if (!selectedColor) return alert('Vui lòng chọn màu');
+    if (!selectedSize) return alert('size guide , please');
+    if (!selectedColor) return alert('color guide please');
 
     const CART_KEY = 'jasmineCart';
     const cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
