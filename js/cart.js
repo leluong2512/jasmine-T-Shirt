@@ -1,7 +1,6 @@
 // cart.js
 $(function() {
   const CART_KEY = 'jasmineCart';
-
   function getCart() {
     return JSON.parse(localStorage.getItem(CART_KEY) || '[]');
   }

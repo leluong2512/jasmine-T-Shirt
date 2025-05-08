@@ -90,3 +90,21 @@
   .ans{
     color: #bababa;
   }
+
+  @media screen and (max-width:767px){
+    .product-content{
+      width: 90%;
+      margin:0 auto;
+      display: grid;
+      gap: 50px;
+      grid-template-columns: none;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    #detail-name{
+      margin-top: 0;
+    }
+  
+  
+    
+}

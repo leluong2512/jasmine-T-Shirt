@@ -1,8 +1,7 @@
 
-
 $(function () {
 	function handleMobileJS() {
-	  if ($(window).width() <= 960) {
+	  if ($(window).width() <= 767) {
 		$('.openbtn').click(function () {
 			$(this).toggleClass('active');
 			$('#g-nav').toggleClass('panelactive');
@@ -12,10 +11,19 @@ $(function () {
 			$('.openbtn').removeClass('active');
 			$('#g-nav').removeClass('panelactive');
 		});
-		$('.header-nav').css('display',('none'))
+		$('.header-nav').css('display',('none'));
+		$('.top-content_img').css('display',('none'));
+		$('.slider').css('display',('block'))
+
 		}else{
 			$('.header-nav').css('display',('flex'));
-			$('.menu-bar-mobile').css('display',('none'))
+			$('.menu-bar-mobile').css('display',('none'));
+			$('.top-content_img').css('display',('grid'));
+			$('.slider').css('display',('none'));
+			$('.top-content').css('backgroundColor',('none'));
+
+
+	
 		}	  
 	}
 	function search(){
@@ -37,6 +45,7 @@ $(function () {
 	$(window).resize(handleMobileJS); 
 
   });
+  
 function delayScrollAnime() {
 	var time = 0.2;
 	var value = time;

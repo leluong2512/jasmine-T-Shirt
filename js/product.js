@@ -26,8 +26,8 @@ $(function () {
         console.warn('Redirect prevented to avoid loop');
         document.body.innerHTML = `
           <div style="text-align:center; margin-top:100px;">
-            <p>Không có dữ liệu sản phẩm để hiển thị.</p>
-            <a href="index.html">Quay về trang chủ</a>
+            <p>No products to display.</p>
+            <a href="Return to homepage</a>
           </div>
         `;
       }
@@ -82,8 +82,8 @@ $(function () {
   });
 
   $('.btn-add').on('click', function () {
-    if (!selectedSize) return alert('size guide , please');
-    if (!selectedColor) return alert('color guide please');
+    if (!selectedSize) return alert('Select a size');
+    if (!selectedColor) return alert('Select a color');
 
     const CART_KEY = 'jasmineCart';
     const cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');

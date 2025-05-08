@@ -125,3 +125,40 @@
 .footer{
     margin-top: 100px
 }
+
+@media screen and (max-width:767px){
+    .women-section-1{
+        margin: 0;
+        gap: 25px;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 0.7fr;
+        align-items: center;
+    }
+    .women-section-1_content{
+        margin: 100px 50px;
+        text-align: center;
+    }
+
+    .women-section-2{
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 25px 25px;
+    }
+
+    .women-section-container{
+        margin: 0;
+    }
+
+    .women-section-container-columns-2{
+        gap: 50px;
+        margin: 25px 25px;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+    
+    
+}
+
+

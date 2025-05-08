@@ -182,4 +182,39 @@ html{
 }
 
 
+@media screen and (max-width:767px){
+    .men-section-1{
+        margin: 0;
+        gap: 25px;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 0.7fr;
+        align-items: center;
+    }
+    .men-section-1_img{
+        width: 100%;
+    }
+    .men-section-1_content{
+        margin: 100px 50px;
+        text-align: center;
+    }
+
+    .men-section-2,
+    .men-section-3_list{
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 25px 25px;
+    }
+    .men-section-3,
+    .men-section-4{
+    display: grid;
+    gap: 50px;
+    grid-template-rows: 1fr;
+}
+
+    
+    
+}
+
 

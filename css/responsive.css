@@ -1,4 +1,17 @@
-@media screen and (max-width : 560px){
+@media screen and (max-width : 767px){
+
+   .has-child:hover >.subnav-list{
+        display: block;
+    }
+    
+   .subnav-list{
+        position: absolute;
+        left: 140%;
+        top: 0;
+        display: none;
+    }
+    
+    
 
     .type-content{
         width: 90%;
@@ -98,8 +111,23 @@
         gap: 25px;
     }
 
+    .footer{
+        height: fit-content;
+        grid-template-rows: 100px 450px 100px;
+    }
+    
+
+    .footer_nav-list{
+        display: none;
+    }
+
+    .footer_subnav{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5f 0.5fr;
+    }
+
 }
 
-@media screen and (min-width : 560px) and (max-width : 960px){
+@media screen and (min-width : 768px) and (max-width : 991px){
 
 }
