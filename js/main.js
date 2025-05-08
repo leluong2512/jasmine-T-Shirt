@@ -30,7 +30,7 @@ $(function () {
 	}
   
 	handleMobileJS(); 
-	$(window).resize(handleMobileJS); git 
+	$(window).resize(handleMobileJS); 
   });
 function delayScrollAnime() {
 	var time = 0.2;
@@ -235,10 +235,10 @@ $(function() {
 	 $(function(){
 		const path = window.location.pathname.toLowerCase();
 	  
-		if (path.includes('men_page.html') || path.endsWith('men_page.html')) {
+		if (path.includes('men_page.html') || path.endsWith('/men_page.html')) {
 		  localStorage.setItem('lastCategory', 'men');
 		} 
-		else if (path.includes('women_index.html') || path.endsWith('women_index.html')) {
+		else if (path.includes('women_index.html') || path.endsWith('/women_index.html')) {
 		  localStorage.setItem('lastCategory', 'women');
 		}
 	  });
