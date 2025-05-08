@@ -175,9 +175,9 @@
                 </div>
                 <div class="shop-now_img"></div>
             </div>
-            <div class="recommend">
+            <div class="recommend ">
                 <div class="recomend-heading"><h2>What Our Customers Say</h2></div>
-                <div class="recommend-list delayScrollRight">
+                <div class="recommend-list recommend-slider delayScrollAnime">
                     <div class="recommend-item">
                         <div class="recommend-star">
                             <i class="fa-solid fa-star"></i>
@@ -232,6 +232,43 @@
                             </div>
                         </div>
                     </div>
+                    <div class="recommend-item">
+                        <div class="recommend-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="recommend-item_heading">Highly Recomment</h4>
+                        <p class="recommend-sub">Quality and delivery exceeded material expectations !</p>
+                        <div class="recommend-customer">
+                            <div class="recommend-customer_img2"></div>
+                            <div class="recommend-customer_info">
+                                <h4 class="customer-name">David M</h4>
+                                <p class="recommend-date">2024/05/08</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-item">
+                        <div class="recommend-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="recommend-item_heading">Highly Recomment</h4>
+                        <p class="recommend-sub">Quality and delivery exceeded material expectations !</p>
+                        <div class="recommend-customer">
+                            <div class="recommend-customer_img2"></div>
+                            <div class="recommend-customer_info">
+                                <h4 class="customer-name">David M</h4>
+                                <p class="recommend-date">2024/05/08</p>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -281,6 +318,39 @@
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/lazysizes.min.js"></script>
-
+    <script>
+    $('.recommend-slider').slick({
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 0,
+		speed: 6900,
+		infinite: true,
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		cssEase: 'linear',
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		responsive: [
+        {
+			breakpoint: 1400,
+			settings: {
+				slidesToShow: 3,
+			}
+		},
+			{
+			breakpoint: 767,
+			settings: {
+				slidesToShow: 2,
+			}
+		},
+		{
+			breakpoint: 426,
+			settings: {
+				slidesToShow: 1,
+			}
+		}
+	]
+	});
+    </script>
 </body>
 </html>
