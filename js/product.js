@@ -18,11 +18,6 @@ $(function () {
 
   // 1. Lấy dữ liệu sản phẩm từ localStorage
   const raw = localStorage.getItem('jasmineProduct');
-  if (!raw) {
-    console.error('No product data found. Redirecting...');
-    window.location.href = 'men_page.html';
-    return;
-  }
   const product = JSON.parse(raw);
   const { name, price, colorImages } = product;
 
