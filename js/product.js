@@ -20,7 +20,7 @@ $(function () {
     if (!raw) {
       if (!sessionStorage.getItem('hasRedirected')) {
         sessionStorage.setItem('hasRedirected', 'true');
-        window.location.href = 'men_page.html';
+        window.location.href = 'index.html';
       } else {
         console.warn('Đã redirect một lần, dừng tại đây để tránh vòng lặp.');
         $('body').html('<p style="text-align:center;margin-top:100px;">Không có dữ liệu sản phẩm để hiển thị.</p>');
