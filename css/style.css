@@ -649,8 +649,6 @@ html{
     background: var(--primary-color);
     border-radius: 10p;
     margin: 0 25px;
-    width: 250px;
-    height: 300px;
 }
 
 .recommend-star{
