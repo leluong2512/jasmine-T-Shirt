@@ -1,15 +1,5 @@
 
-$('.open-btn').click(function () {
-    $('#search-wrap').addClass('panelactive');
-	$('#search-text').focus();
-	$('.menu-bar-mobile').css('display',('none'))
-});
 
-$('.close-btn').click(function () {
-    $('#search-wrap').removeClass('panelactive');
-	$('.menu-bar-mobile').css('display',('block'))
-
-});
 $(function () {
 	function handleMobileJS() {
 	  if ($(window).width() <= 960) {
@@ -28,9 +18,24 @@ $(function () {
 			$('.menu-bar-mobile').css('display',('none'))
 		}	  
 	}
+	function search(){
+		$('.open-btn').click(function () {
+			$('#search-wrap').addClass('panelactive');
+			$('#search-text').focus();
+		});
+		
+		$('.close-btn').click(function () {
+			$('#search-wrap').removeClass('panelactive');
+		
+		});
+	}
+	
   
+	search();
 	handleMobileJS(); 
+	$(window).resize(search); 
 	$(window).resize(handleMobileJS); 
+
   });
 function delayScrollAnime() {
 	var time = 0.2;

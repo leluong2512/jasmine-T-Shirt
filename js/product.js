@@ -16,13 +16,23 @@ $(function () {
       });
     });
 
-  const raw = localStorage.getItem('jasmineProduct');
-  if (!raw) {
-    console.error('No product data found. Redirecting...');
-    window.location.href = 'men_page.html';
-    return;
-  }
-  const product = JSON.parse(raw);
+    const raw = localStorage.getItem('jasmineProduct');
+    if (!raw) {
+      if (!sessionStorage.getItem('hasRedirectedToHome')) {
+        sessionStorage.setItem('hasRedirectedToHome', 'true');
+        console.error('No product data found. Redirecting to homepage...');
+        window.location.href = 'index.html';  
+      } else {
+        console.warn('Redirect prevented to avoid loop');
+        document.body.innerHTML = `
+          <div style="text-align:center; margin-top:100px;">
+            <p>Không có dữ liệu sản phẩm để hiển thị.</p>
+            <a href="index.html">Quay về trang chủ</a>
+          </div>
+        `;
+      }
+      return;
+    }  const product = JSON.parse(raw);
   const { name, price, colorImages } = product;
 
   const availableColors = Object.keys(colorImages);
