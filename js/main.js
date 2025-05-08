@@ -43,7 +43,6 @@ $(function () {
 	handleMobileJS(); 
 	$(window).resize(search); 
 	$(window).resize(handleMobileJS); 
-
   });
   
 function delayScrollAnime() {
@@ -76,7 +75,7 @@ function delayScrollAnime() {
 			value = time;
 		}
 	})
-    $('.delayScrollRight').each(function () {
+$('.delayScrollRight').each(function () {
         var parent = this;					
         var elemPos = $(this).offset().top;
         var scroll = $(window).scrollTop();

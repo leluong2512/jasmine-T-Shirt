@@ -6,14 +6,14 @@ $(function () {
         backgroundColor: '#fff',
         color: '#000',
         border: '1px solid #000'
-      });
+      },500);
     })
     .on('mouseout', function () {
       $(this).css({
         backgroundColor: '',
         color: '',
         border: 'none'
-      });
+      },500);
     });
 
   // 1. Lấy dữ liệu sản phẩm từ localStorage

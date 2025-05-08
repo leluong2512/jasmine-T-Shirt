@@ -59,3 +59,53 @@
           }
         }
     
+
+  /* btn----------- */
+  .btnarrow{
+    position: relative;
+    border: 1px solid var(--black-color);
+    text-decoration: none;
+    color: var(--text-color);
+    /* outline: none; */
+    transition: all .2s linear;
+}
+
+
+  .btnarrow:hover{
+    background:var(--black-color);
+    color:#fff;
+  }
+  
+  .btnarrow::before{
+    content:"";
+    position: absolute;
+    top:50%;
+    right:-26px;
+    width:40px;
+    height:1px;
+    background:var(--black-color);
+      transition: all .2s linear;
+  }
+  
+  .btnarrow::after{
+    content:"";
+    position: absolute;
+      top: 20%;
+      right: -21px;
+    width:1px;
+    height:12px;
+    background:var(--black-color);
+      transform:skewX(45deg);
+      transition: all .2s linear;
+  }
+  
+  .btnarrow:hover::before{
+    right:-30px;
+  }
+  
+  .btnarrow:hover::after{
+    right:-25px;
+  }
+  
+
+  

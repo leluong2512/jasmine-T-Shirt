@@ -96,8 +96,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: white;
-    border-top: 1px solid #ddd;
+    background: var(--primary-color);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -113,14 +112,26 @@
 
   #checkout-btn ,
   #continue-shopping{
-    padding: 10px 20px;
+    width: 150px;
+    height: 40px;
     font-size: 16px;
-    background-color: var(--black-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
+    color: var(--text-color);
     cursor: pointer;
+    margin-right: 20px;
   }
+
+  #continue-shopping{
+    border: 1px solid var(--black-color);
+  }
+
+  #continue-shopping:hover,
+  #checkout-btn:hover{
+    background: var(--black-color);
+    color: var(--white-color);
+  }
+
+  
 
   #cart-summary.hidden {
     display: none;
