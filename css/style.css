@@ -16,7 +16,7 @@ html{
     top: 0;
     left: 0;
     background: transparent;
-    z-index: 1;
+    z-index: 6;
 }
 
 .header .header-logo a{
@@ -31,7 +31,8 @@ html{
     gap: 10px;
 }
 
-.header-nav .nav-item a{
+.header-nav .nav-item a,
+.nav-item-span p{
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--text-color);
@@ -41,6 +42,7 @@ html{
     width: 100px;
     height: 40px;
     text-decoration: none;
+    cursor: pointer;
 
 
 }
@@ -289,7 +291,7 @@ html{
 	position: absolute;
 	 top:100px;
 	right:-45px;
-	background:url("../img/icon_search.svg") no-repeat 15px center;/*虫眼鏡アイコンを背景に表示*/
+	background:url("../img/icon_search.svg") no-repeat 15px center;
 	background-size: 1.5rem 1.5rem;
 	width: 60px;
 	height: 60px;
@@ -463,6 +465,10 @@ html{
     margin-top: 30px;
 }
 
+.top-content .slider{
+    display: none;
+}
+
 .top-content_button{
     width: 150px;
     height: 40px;
@@ -530,6 +536,7 @@ html{
     background: var(--white-color);
     position: relative;
     padding-bottom: 50px;
+
 }
 
 .type-content_item_box{
@@ -543,7 +550,7 @@ html{
 
 .type-content_item_img img{
     width: 100%;
-    transition: all .5s ease-out;
+    transition: all .5s linear;
 }
 
 .type-content_item_img img:hover{
@@ -705,7 +712,7 @@ html{
 
 .shop-now_img{
     width: 400px;
-    height: 400px;
+    height: 420px;
     background: url(../img/kailey-sniffin-trVtuHxKkbA-unsplash.jpg) no-repeat center center/cover;
 }
 
@@ -817,6 +824,10 @@ html{
     color: var(--white-color);
 }
 
+.footer_logo a:hover{
+    color: #b4b4b4;
+}
+
 .footer_nav-list{
     display: flex;
     gap: 50px;
@@ -849,6 +860,10 @@ html{
     color: var(--white-color);
     font-weight: 300;
     margin-bottom :20px;
+}
+
+.footer li a:hover{
+    color: #b4b4b4;
 }
 
 .footer_subnav li{

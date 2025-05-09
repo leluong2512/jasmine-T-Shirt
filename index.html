@@ -25,7 +25,7 @@
             <div class="header-nav">
                 <ul class="nav-list gnavi">
                     <li class="nav-item"><a href="#"><span class="nav-item-span">Home</span></a></li>
-                    <li class="nav-item has-child"><a href="#"><span class="nav-item-span">Shop</span></a>
+                    <li class="nav-item has-child"><span class="nav-item-span"><p>Shop</p></span>
                         <ul class="subnav-list">
                             <li class="subnav-item"><a href="men_page.html"><span>Men</span></a></li>
                             <li class="subnav-item"><a href="women_index.html"><span>Women</span></a></li>
@@ -60,7 +60,7 @@
                         <div id="g-nav-list">
                             <ul class="nav-list">
                                 <li><a href="#">Home</a></li>
-                                <li class="has-child"><a href="#">Shop</a>
+                                <li class="has-child">Shop
                                     <ul class="subnav-list">
                                         <li class="subnav-item"><a href="men_page.html">Men</a></li>
                                         <li class="subnav-item"><a href="women_index.html">Women</a></li>
@@ -88,9 +88,9 @@
                 </div>
                 <div class="top-content_img delayScroll">
                         <img class="item-1 lazyload" data-src="./img/t-shirt image/ChatGPT Image 12_55_01 17 thg 4, 2025.png" alt="">
-                        <img class="item-2 lazyload" data-src="./img/t-shirt image/ChatGPT Image 2025年4月16日 13_55_37.png" alt="">    
-                        <img class="item-3 lazyload " data-src="./img/t-shirt image/ChatGPT Image 2025年4月16日 11_40_11.png" alt="">
-                        <img class="item-4 lazyload " data-src="./img/t-shirt image/ChatGPT Image 2025年4月16日 10_52_00.png" alt="">
+                        <img class="item-2 lazyload" data-src="./img/slider1.png" alt="">    
+                        <img class="item-3 lazyload " data-src="./img/slider2.png" alt="">
+                        <img class="item-4 lazyload " data-src="./img/t-shirt image/ChatGPT Image 2025年4月16日 11_40_11.png" alt="">
                         
                 </div>
                 <ul class="slider">
@@ -311,7 +311,6 @@
             <div class="footer_logo-navmain ">
                 <div class="footer_logo"><a href="#">jasmine</a></div>
                 <ul class="footer_nav-list">
-                    <li><a href="#">shop</a></li>
                     <li><a href="#">about</a></li>
                     <li><a href="#">blog</a></li>
                     <li><a href="#">contact</a></li>
@@ -390,6 +389,27 @@
 		}
 	]
 	});
+
+    $('.slider').slick({
+		fade:true,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		speed:1000,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		prevArrow: '<div class="slick-prev"></div>',
+		nextArrow: '<div class="slick-next"></div>',
+		dots: true,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+});
+
+$('.slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
+    $('.slider').slick('slickPlay');
+});
     </script>
 </body>
 </html>

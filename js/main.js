@@ -11,19 +11,10 @@ $(function () {
 			$('.openbtn').removeClass('active');
 			$('#g-nav').removeClass('panelactive');
 		});
-		$('.header-nav').css('display',('none'));
-		$('.top-content_img').css('display',('none'));
-		$('.slider').css('display',('block'))
-
+		$('.header-nav').css('display',('none'));		
 		}else{
 			$('.header-nav').css('display',('flex'));
 			$('.menu-bar-mobile').css('display',('none'));
-			$('.top-content_img').css('display',('grid'));
-			$('.slider').css('display',('none'));
-			$('.top-content').css('backgroundColor',('none'));
-
-
-	
 		}	  
 	}
 	function search(){
